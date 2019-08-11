@@ -1,4 +1,4 @@
-from tweepy import StreamListener
+from tweepy.streaming import StreamListener
 
 class RealTimeTweetListener(StreamListener):
     """ A listener class which maintains the connection and listens for tweets
@@ -8,10 +8,13 @@ class RealTimeTweetListener(StreamListener):
         pass
 
     def on_status(self, status):
-        pass
+        print "Tweet received: ", status.text.encode('utf-8')
+        return status.text
 
     def on_error(self, status_code):
         pass
 
     def on_exception(self, exception):
         pass
+
+

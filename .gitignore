@@ -1,3 +1,4 @@
+*.rdb
 *.pyc
 config.py
 venv/
